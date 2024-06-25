@@ -6,7 +6,7 @@ const dataset = require("./dataset.json");
 const fs = require("fs");
 const prompt = require("prompt-sync")({ sigint: true });
 
-const supportedOutputTypes = ["jpeg/buf", "png/buf", "jpeg/b64", "png/b64"];
+const supportedOutputTypes = [];
 const COLORS = require("./constants");
 
 const symbols =
@@ -292,7 +292,7 @@ async function main(rawText = "", optionalArgs = {}) {
 
 // Get user input
 const rawText = prompt("Enter the text you want to convert to handwritten: ");
-const outputType = prompt("Enter the output type (pdf, jpeg/buf, png/buf, jpeg/b64, png/b64): ");
+const outputType = prompt("Enter the output type (supported pdf only): ");
 const inkColor = prompt("Enter the ink color (red, blue): ");
 const ruled = prompt("Do you want ruled lines? (yes/no): ").toLowerCase() === "yes";
 
